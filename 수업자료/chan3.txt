@@ -1,0 +1,288 @@
+SQL> select ename, hiredate from emp;
+
+ENAME                HIREDATE                                                   
+-------------------- --------                                                   
+SMITH                80/12/17                                                   
+ALLEN                81/02/20                                                   
+WARD                 81/02/22                                                   
+JONES                81/04/02                                                   
+MARTIN               81/09/28                                                   
+BLAKE                81/05/01                                                   
+CLARK                81/06/09                                                   
+SCOTT                87/04/19                                                   
+KING                 81/11/17                                                   
+TURNER               81/09/08                                                   
+ADAMS                87/05/23                                                   
+
+ENAME                HIREDATE                                                   
+-------------------- --------                                                   
+JAMES                81/12/03                                                   
+FORD                 81/12/03                                                   
+MILLER               82/01/23                                                   
+
+14 행이 선택되었습니다.
+
+SQL> desc emp;
+ 이름                                      널?      유형
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                              NUMBER(4)
+ ENAME                                              VARCHAR2(10)
+ JOB                                                VARCHAR2(9)
+ MGR                                                NUMBER(4)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(7,2)
+ COMM                                               NUMBER(7,2)
+ DEPTNO                                             NUMBER(2)
+
+SQL> insert into emp {ename, hiredate) values (hi, 2004/10/10);
+insert into emp {ename, hiredate) values (hi, 2004/10/10)
+                *
+1행에 오류:
+ORA-00911: 문자가 부적합합니다 
+
+
+SQL> insert into emp (ename, hiredate) values (hi, 2004/10/10);
+insert into emp (ename, hiredate) values (hi, 2004/10/10)
+            *
+1행에 오류:
+ORA-12081: "SCOTT"."EMP" 테이블에 작업을 갱신하는 것이 허용되지 않습니다 
+
+
+SQL> desc emp
+ 이름                                      널?      유형
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                              NUMBER(4)
+ ENAME                                              VARCHAR2(10)
+ JOB                                                VARCHAR2(9)
+ MGR                                                NUMBER(4)
+ HIREDATE                                           DATE
+ SAL                                                NUMBER(7,2)
+ COMM                                               NUMBER(7,2)
+ DEPTNO                                             NUMBER(2)
+
+SQL> select ename, hiredate, hiredate + 365 from emp;
+
+ENAME                HIREDATE HIREDATE                                          
+-------------------- -------- --------                                          
+SMITH                80/12/17 81/12/17                                          
+ALLEN                81/02/20 82/02/20                                          
+WARD                 81/02/22 82/02/22                                          
+JONES                81/04/02 82/04/02                                          
+MARTIN               81/09/28 82/09/28                                          
+BLAKE                81/05/01 82/05/01                                          
+CLARK                81/06/09 82/06/09                                          
+SCOTT                87/04/19 88/04/18                                          
+KING                 81/11/17 82/11/17                                          
+TURNER               81/09/08 82/09/08                                          
+ADAMS                87/05/23 88/05/22                                          
+
+ENAME                HIREDATE HIREDATE                                          
+-------------------- -------- --------                                          
+JAMES                81/12/03 82/12/03                                          
+FORD                 81/12/03 82/12/03                                          
+MILLER               82/01/23 83/01/23                                          
+
+14 행이 선택되었습니다.
+
+SQL> select ename, hiredate, hiredate + 693,500 from emp;
+
+ENAME                HIREDATE HIREDATE        500                               
+-------------------- -------- -------- ----------                               
+SMITH                80/12/17 82/11/10        500                               
+ALLEN                81/02/20 83/01/14        500                               
+WARD                 81/02/22 83/01/16        500                               
+JONES                81/04/02 83/02/24        500                               
+MARTIN               81/09/28 83/08/22        500                               
+BLAKE                81/05/01 83/03/25        500                               
+CLARK                81/06/09 83/05/03        500                               
+SCOTT                87/04/19 89/03/12        500                               
+KING                 81/11/17 83/10/11        500                               
+TURNER               81/09/08 83/08/02        500                               
+ADAMS                87/05/23 89/04/15        500                               
+
+ENAME                HIREDATE HIREDATE        500                               
+-------------------- -------- -------- ----------                               
+JAMES                81/12/03 83/10/27        500                               
+FORD                 81/12/03 83/10/27        500                               
+MILLER               82/01/23 83/12/17        500                               
+
+14 행이 선택되었습니다.
+
+SQL> select ename, hiredate, hiredate + 693500 from emp;
+
+ENAME                HIREDATE HIREDATE                                          
+-------------------- -------- --------                                          
+SMITH                80/12/17 79/09/13                                          
+ALLEN                81/02/20 79/11/17                                          
+WARD                 81/02/22 79/11/19                                          
+JONES                81/04/02 79/12/28                                          
+MARTIN               81/09/28 80/06/24                                          
+BLAKE                81/05/01 80/01/26                                          
+CLARK                81/06/09 80/03/05                                          
+SCOTT                87/04/19 86/01/13                                          
+KING                 81/11/17 80/08/13                                          
+TURNER               81/09/08 80/06/04                                          
+ADAMS                87/05/23 86/02/16                                          
+
+ENAME                HIREDATE HIREDATE                                          
+-------------------- -------- --------                                          
+JAMES                81/12/03 80/08/29                                          
+FORD                 81/12/03 80/08/29                                          
+MILLER               82/01/23 80/10/19                                          
+
+14 행이 선택되었습니다.
+
+SQL> select ename, hiredate, hiredate + 69350 from emp;
+
+ENAME                HIREDATE HIREDATE                                          
+-------------------- -------- --------                                          
+SMITH                80/12/17 70/11/01                                          
+ALLEN                81/02/20 71/01/05                                          
+WARD                 81/02/22 71/01/07                                          
+JONES                81/04/02 71/02/15                                          
+MARTIN               81/09/28 71/08/13                                          
+BLAKE                81/05/01 71/03/16                                          
+CLARK                81/06/09 71/04/24                                          
+SCOTT                87/04/19 77/03/03                                          
+KING                 81/11/17 71/10/02                                          
+TURNER               81/09/08 71/07/24                                          
+ADAMS                87/05/23 77/04/06                                          
+
+ENAME                HIREDATE HIREDATE                                          
+-------------------- -------- --------                                          
+JAMES                81/12/03 71/10/18                                          
+FORD                 81/12/03 71/10/18                                          
+MILLER               82/01/23 71/12/08                                          
+
+14 행이 선택되었습니다.
+
+SQL> select ename, hiredate, hiredate + 6935 from emp;
+
+ENAME                HIREDATE HIREDATE                                          
+-------------------- -------- --------                                          
+SMITH                80/12/17 99/12/13                                          
+ALLEN                81/02/20 00/02/16                                          
+WARD                 81/02/22 00/02/18                                          
+JONES                81/04/02 00/03/28                                          
+MARTIN               81/09/28 00/09/23                                          
+BLAKE                81/05/01 00/04/26                                          
+CLARK                81/06/09 00/06/04                                          
+SCOTT                87/04/19 06/04/14                                          
+KING                 81/11/17 00/11/12                                          
+TURNER               81/09/08 00/09/03                                          
+ADAMS                87/05/23 06/05/18                                          
+
+ENAME                HIREDATE HIREDATE                                          
+-------------------- -------- --------                                          
+JAMES                81/12/03 00/11/28                                          
+FORD                 81/12/03 00/11/28                                          
+MILLER               82/01/23 01/01/18                                          
+
+14 행이 선택되었습니다.
+
+SQL> /
+
+ENAME                HIREDATE HIREDATE                                          
+-------------------- -------- --------                                          
+SMITH                80/12/17 99/12/13                                          
+ALLEN                81/02/20 00/02/16                                          
+WARD                 81/02/22 00/02/18                                          
+JONES                81/04/02 00/03/28                                          
+MARTIN               81/09/28 00/09/23                                          
+BLAKE                81/05/01 00/04/26                                          
+CLARK                81/06/09 00/06/04                                          
+SCOTT                87/04/19 06/04/14                                          
+KING                 81/11/17 00/11/12                                          
+TURNER               81/09/08 00/09/03                                          
+ADAMS                87/05/23 06/05/18                                          
+
+ENAME                HIREDATE HIREDATE                                          
+-------------------- -------- --------                                          
+JAMES                81/12/03 00/11/28                                          
+FORD                 81/12/03 00/11/28                                          
+MILLER               82/01/23 01/01/18                                          
+
+14 행이 선택되었습니다.
+
+SQL> select ename, job, deptno from emp where job='clerl';
+
+선택된 레코드가 없습니다.
+
+SQL> select ename, job, deptno from emp where job='clerk';
+
+선택된 레코드가 없습니다.
+
+SQL> select ename, job, deptno from emp where job='clerk';
+
+선택된 레코드가 없습니다.
+
+SQL> select ename, job, deptno from emp where job='CLERK';
+
+ENAME                JOB                    DEPTNO                              
+-------------------- ------------------ ----------                              
+SMITH                CLERK                      20                              
+ADAMS                CLERK                      20                              
+JAMES                CLERK                      30                              
+MILLER               CLERK                      10                              
+
+SQL> select ename, job, deptno from emp where job<>'CLERK';
+
+ENAME                JOB                    DEPTNO                              
+-------------------- ------------------ ----------                              
+ALLEN                SALESMAN                   30                              
+WARD                 SALESMAN                   30                              
+JONES                MANAGER                    20                              
+MARTIN               SALESMAN                   30                              
+BLAKE                MANAGER                    30                              
+CLARK                MANAGER                    10                              
+SCOTT                ANALYST                    20                              
+KING                 PRESIDENT                  10                              
+TURNER               SALESMAN                   30                              
+FORD                 ANALYST                    20                              
+
+10 행이 선택되었습니다.
+
+SQL> select ename, job, deptno from emp where job='CLERK';
+
+ENAME                JOB                    DEPTNO                              
+-------------------- ------------------ ----------                              
+SMITH                CLERK                      20                              
+ADAMS                CLERK                      20                              
+JAMES                CLERK                      30                              
+MILLER               CLERK                      10                              
+
+SQL> 
+SQL> select ename, sal from emp
+  2  where sal >= 1000 and sal <= 1500
+  3  ;
+
+ENAME                       SAL                                                 
+-------------------- ----------                                                 
+WARD                       1250                                                 
+MARTIN                     1250                                                 
+TURNER                     1500                                                 
+ADAMS                      1100                                                 
+MILLER                     1300                                                 
+
+SQL> select ename, sal from emp
+  2  where sal >= 1000 and sal <= 1500;
+
+ENAME                       SAL                                                 
+-------------------- ----------                                                 
+WARD                       1250                                                 
+MARTIN                     1250                                                 
+TURNER                     1500                                                 
+ADAMS                      1100                                                 
+MILLER                     1300                                                 
+
+SQL> select ename, sal, comm from emp
+  2  where comm is not null;
+
+ENAME                       SAL       COMM                                      
+-------------------- ---------- ----------                                      
+ALLEN                      1600        300                                      
+WARD                       1250        500                                      
+MARTIN                     1250       1400                                      
+TURNER                     1500          0                                      
+
+SQL> spool off

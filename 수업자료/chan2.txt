@@ -1,0 +1,25 @@
+SQL> select ename, hiredate from emp;
+
+ENAME                HIREDATE                                                   
+-------------------- --------                                                   
+SMITH                80/12/17                                                   
+ALLEN                81/02/20                                                   
+WARD                 81/02/22                                                   
+JONES                81/04/02                                                   
+MARTIN               81/09/28                                                   
+BLAKE                81/05/01                                                   
+CLARK                81/06/09                                                   
+SCOTT                87/04/19                                                   
+KING                 81/11/17                                                   
+TURNER               81/09/08                                                   
+ADAMS                87/05/23                                                   
+
+ENAME                HIREDATE                                                   
+-------------------- --------                                                   
+JAMES                81/12/03                                                   
+FORD                 81/12/03                                                   
+MILLER               82/01/23                                                   
+
+14 행이 선택되었습니다.
+
+SQL> spool off
