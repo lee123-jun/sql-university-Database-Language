@@ -1,0 +1,142 @@
+practice 2
+AI 소프트웨어학과 202122852 이혜준
+
+[1번]
+select ename, sal from emp
+where sal >=2850;
+
+JONES 2975
+BLAKE 2850
+SCOTT 3000
+KING 5000
+FORD 3300
+
+save D:\class\p2ql.sql
+@ D:\class\p2ql.sql
+
+[2번]
+select ename, deptno from emp
+where empno = 7566;
+
+JONES 20
+
+[3번]
+get D:\class\p2ql.sql
+edit
+
+select ename, sal from emp
+where sal < 1500 or sal > 2850;
+
+SMITH 800
+WARD 1250
+JONES 2975
+MARTIN 1250
+SCOTT 3000
+KING 5000
+ADAMS 1100
+JAMES 950
+FORD 3300
+MILLER 1300
+
+save D:\class\p2q3.sql
+@ D:\class\p2q3.sql
+
+[4번]
+select ename, job, hiredate from emp
+where hiredate >= '81/02/20' and hiredate <= '81/05/01'
+order by hiredate;
+
+ALLEN SALESMAN 81/02/20
+WARD SALESMAN 81/02/22
+JONES MANAGER 81/04/02
+BLAKE MANAGER 81/05/01
+
+[5번]
+select ename, deptno from emp
+where deptno = 10 or deptno = 30
+order by ename;
+
+ALLEN 30
+BLAKE 30
+CLARK 10
+JAMES 30
+KING 10
+MARTIN 30
+MILLER 10
+TURNER 30
+WARD 30
+
+[6번]
+get D:\class\p2q3.sql
+edit
+
+select ename "Employee", sal "Monthiy salary" from emp
+where sal > 1500 and (deptno = 10 or deptno = 30);
+
+ALLEN 1600
+BLAKE 2850
+CLARK 2450
+KING 5000
+
+save D:\class\p2q6.sql
+@ D:\class\p2q6.sql
+
+[7번]
+select ename, hiredate from emp
+where hiredate like '82%';
+
+MILLER 82/01/23
+
+[8번]
+select ename, job from emp
+where mgr is null;
+
+KING PRESIDENT
+춘향이
+
+[9번]
+select ename, sal, comm from emp
+where comm is not null
+order by sal desc, comm desc;
+
+ALLEN 1600 300
+TURNER 1500 0
+MARTIN 1250 1400
+WARD 1250 500
+
+[10번]
+select ename from emp
+where ename like '__A%';
+
+BLAKE
+CLARK
+ADAMS
+
+[11번]
+select ename from emp
+where (ename like '%LL%' and deptno = 30) or mgr = 7782;
+
+ALLEN
+MILLER
+
+[12번]
+select ename, job, sal from emp
+where job in ('CLERK','ANALYST')
+and sal not in (1000, 3000, 5000);
+
+SMITH CLERK 800
+ADAMS CLERK 1100
+JAMES CLERK 950
+FORD ANALYST 3300
+MILLER CLERK 1300
+
+[13번]
+get D:\class\p2q6.sql
+edit
+
+select ename, sal, comm from emp
+where comm > (sal*1.1);
+
+MARTIN 1250 1400
+
+save D:\class\p2q13.sql
