@@ -1,0 +1,452 @@
+1번 문제)
+SQL> select sysdate "Date" from dual
+  2  ;
+
+Date                                                                            
+--------                                                                        
+24/04/08                                                                        
+
+
+
+
+
+
+2번 문제)
+SQL> select empno, ename, sal, sal*1.15 "New Salary" from emp;
+
+     EMPNO ENAME                       SAL New Salary                           
+---------- -------------------- ---------- ----------                           
+      7369 SMITH                       800        920                           
+      7499 ALLEN                      1600       1840                           
+      7521 WARD                       1250     1437.5                           
+      7566 JONES                      2975    3421.25                           
+      7654 MARTIN                     1250     1437.5                           
+      7698 BLAKE                      2850     3277.5                           
+      7782 CLARK                      2450     2817.5                           
+      7788 SCOTT                      3000       3450                           
+      7839 KING                       5000       5750                           
+      7844 TURNER                     1500       1725                           
+      7876 ADAMS                      1100       1265                           
+
+     EMPNO ENAME                       SAL New Salary                           
+---------- -------------------- ---------- ----------                           
+      7900 JAMES                       950     1092.5                           
+      7902 FORD                       3300       3795                           
+      7934 MILLER                     1300       1495                           
+
+14 행이 선택되었습니다.
+
+SQL> save c:/users/jiwo2/desktop/p3q2.sql
+file c:/users/jiwo2/desktop/p3q2.sql(이)가 생성되었습니다
+
+
+
+
+
+
+3번 문제)
+SQL> start c:/users/jiwo2/desktop/p3q2.sql
+
+     EMPNO ENAME                       SAL New Salary                           
+---------- -------------------- ---------- ----------                           
+      7369 SMITH                       800        920                           
+      7499 ALLEN                      1600       1840                           
+      7521 WARD                       1250     1437.5                           
+      7566 JONES                      2975    3421.25                           
+      7654 MARTIN                     1250     1437.5                           
+      7698 BLAKE                      2850     3277.5                           
+      7782 CLARK                      2450     2817.5                           
+      7788 SCOTT                      3000       3450                           
+      7839 KING                       5000       5750                           
+      7844 TURNER                     1500       1725                           
+      7876 ADAMS                      1100       1265                           
+
+     EMPNO ENAME                       SAL New Salary                           
+---------- -------------------- ---------- ----------                           
+      7900 JAMES                       950     1092.5                           
+      7902 FORD                       3300       3795                           
+      7934 MILLER                     1300       1495                           
+
+14 행이 선택되었습니다.
+
+
+
+
+
+
+4번 문제)
+SQL> get c:/users/jiwo2/desktop/p3q2.sql
+  1* select empno, ename, sal, sal*1.15 "New Salary" from emp
+SQL> edit
+file afiedt.buf(이)가 기록되었습니다
+
+  1* select empno, ename, sal, sal*1.15 "New Salary", sal*1.15-sal "Increase" from emp
+SQL> /
+
+     EMPNO ENAME                       SAL New Salary   Increase                
+---------- -------------------- ---------- ---------- ----------                
+      7369 SMITH                       800        920        120                
+      7499 ALLEN                      1600       1840        240                
+      7521 WARD                       1250     1437.5      187.5                
+      7566 JONES                      2975    3421.25     446.25                
+      7654 MARTIN                     1250     1437.5      187.5                
+      7698 BLAKE                      2850     3277.5      427.5                
+      7782 CLARK                      2450     2817.5      367.5                
+      7788 SCOTT                      3000       3450        450                
+      7839 KING                       5000       5750        750                
+      7844 TURNER                     1500       1725        225                
+      7876 ADAMS                      1100       1265        165                
+
+     EMPNO ENAME                       SAL New Salary   Increase                
+---------- -------------------- ---------- ---------- ----------                
+      7900 JAMES                       950     1092.5      142.5                
+      7902 FORD                       3300       3795        495                
+      7934 MILLER                     1300       1495        195                
+
+14 행이 선택되었습니다.
+
+
+
+
+
+
+5번 문제)
+SQL> select ename, hiredate, to_char(next_day(add_months(hiredate,6), 2), 'day, ddspth "of" mm, yyyy') "REVIEW" from emp;
+
+ENAME                HIREDATE                                                   
+-------------------- --------                                                   
+REVIEW                                                                          
+--------------------------------------------------------------------------------
+SMITH                80/12/17                                                   
+월요일, twenty-second of 06, 1981                                               
+                                                                                
+ALLEN                81/02/20                                                   
+월요일, twenty-fourth of 08, 1981                                               
+                                                                                
+WARD                 81/02/22                                                   
+월요일, twenty-fourth of 08, 1981                                               
+                                                                                
+
+ENAME                HIREDATE                                                   
+-------------------- --------                                                   
+REVIEW                                                                          
+--------------------------------------------------------------------------------
+JONES                81/04/02                                                   
+월요일, fifth of 10, 1981                                                       
+                                                                                
+MARTIN               81/09/28                                                   
+월요일, twenty-ninth of 03, 1982                                                
+                                                                                
+BLAKE                81/05/01                                                   
+월요일, second of 11, 1981                                                      
+                                                                                
+
+ENAME                HIREDATE                                                   
+-------------------- --------                                                   
+REVIEW                                                                          
+--------------------------------------------------------------------------------
+CLARK                81/06/09                                                   
+월요일, fourteenth of 12, 1981                                                  
+                                                                                
+SCOTT                87/04/19                                                   
+월요일, twenty-sixth of 10, 1987                                                
+                                                                                
+KING                 81/11/17                                                   
+월요일, twenty-fourth of 05, 1982                                               
+                                                                                
+
+ENAME                HIREDATE                                                   
+-------------------- --------                                                   
+REVIEW                                                                          
+--------------------------------------------------------------------------------
+TURNER               81/09/08                                                   
+월요일, fifteenth of 03, 1982                                                   
+                                                                                
+ADAMS                87/05/23                                                   
+월요일, thirtieth of 11, 1987                                                   
+                                                                                
+JAMES                81/12/03                                                   
+월요일, seventh of 06, 1982                                                     
+                                                                                
+
+ENAME                HIREDATE                                                   
+-------------------- --------                                                   
+REVIEW                                                                          
+--------------------------------------------------------------------------------
+FORD                 81/12/03                                                   
+월요일, seventh of 06, 1982                                                     
+                                                                                
+MILLER               82/01/23                                                   
+월요일, twenty-sixth of 07, 1982                                                
+                                                                                
+
+14 행이 선택되었습니다.                                        
+
+
+
+
+
+
+6번 문제)
+SQL> select ename, round((sysdate - hiredate)/30) "MONTHS_WORKED"
+  2  from emp
+  3  order by MONTHS_WORKED;
+
+ENAME                MONTHS_WORKED                                              
+-------------------- -------------                                              
+ADAMS                          449                                              
+SCOTT                          450                                              
+MILLER                         514                                              
+FORD                           516                                              
+JAMES                          516                                              
+KING                           516                                              
+TURNER                         518                                              
+MARTIN                         518                                              
+CLARK                          521                                              
+BLAKE                          523                                              
+JONES                          524                                              
+
+ENAME                MONTHS_WORKED                                              
+-------------------- -------------                                              
+WARD                           525                                              
+ALLEN                          525                                              
+SMITH                          527                                              
+
+14 행이 선택되었습니다.
+
+
+
+
+
+
+7번 문제)
+SQL> select ename || ' earns '  || to_char(sal, '$999,999.99') || ' monthly but wants ' || to_char(sal*3, '$999,999.99') || '.' "Draem Salaries" from emp;
+
+Draem Salaries                                                                  
+--------------------------------------------------------------------------------
+SMITH earns      $800.00 monthly but wants    $2,400.00.                        
+ALLEN earns    $1,600.00 monthly but wants    $4,800.00.                        
+WARD earns    $1,250.00 monthly but wants    $3,750.00.                         
+JONES earns    $2,975.00 monthly but wants    $8,925.00.                        
+MARTIN earns    $1,250.00 monthly but wants    $3,750.00.                       
+BLAKE earns    $2,850.00 monthly but wants    $8,550.00.                        
+CLARK earns    $2,450.00 monthly but wants    $7,350.00.                        
+SCOTT earns    $3,000.00 monthly but wants    $9,000.00.                        
+KING earns    $5,000.00 monthly but wants   $15,000.00.                         
+TURNER earns    $1,500.00 monthly but wants    $4,500.00.                       
+ADAMS earns    $1,100.00 monthly but wants    $3,300.00.                        
+
+Draem Salaries                                                                  
+--------------------------------------------------------------------------------
+JAMES earns      $950.00 monthly but wants    $2,850.00.                        
+FORD earns    $3,300.00 monthly but wants    $9,900.00.                         
+MILLER earns    $1,300.00 monthly but wants    $3,900.00.                       
+
+14 행이 선택되었습니다.
+
+
+
+
+
+
+8번 문제)
+SQL> select ename, lpad(sal, 15, '$') "SALARY" from emp;
+
+ENAME                                                                           
+--------------------                                                            
+SALARY                                                                          
+--------------------------------------------------------------------------------
+SMITH                                                                           
+$$$$$$$$$$$$800                                                                 
+                                                                                
+ALLEN                                                                           
+$$$$$$$$$$$1600                                                                 
+                                                                                
+WARD                                                                            
+$$$$$$$$$$$1250                                                                 
+                                                                                
+
+ENAME                                                                           
+--------------------                                                            
+SALARY                                                                          
+--------------------------------------------------------------------------------
+JONES                                                                           
+$$$$$$$$$$$2975                                                                 
+                                                                                
+MARTIN                                                                          
+$$$$$$$$$$$1250                                                                 
+                                                                                
+BLAKE                                                                           
+$$$$$$$$$$$2850                                                                 
+                                                                                
+
+ENAME                                                                           
+--------------------                                                            
+SALARY                                                                          
+--------------------------------------------------------------------------------
+CLARK                                                                           
+$$$$$$$$$$$2450                                                                 
+                                                                                
+SCOTT                                                                           
+$$$$$$$$$$$3000                                                                 
+                                                                                
+KING                                                                            
+$$$$$$$$$$$5000                                                                 
+                                                                                
+
+ENAME                                                                           
+--------------------                                                            
+SALARY                                                                          
+--------------------------------------------------------------------------------
+TURNER                                                                          
+$$$$$$$$$$$1500                                                                 
+                                                                                
+ADAMS                                                                           
+$$$$$$$$$$$1100                                                                 
+                                                                                
+JAMES                                                                           
+$$$$$$$$$$$$950                                                                 
+                                                                                
+
+ENAME                                                                           
+--------------------                                                            
+SALARY                                                                          
+--------------------------------------------------------------------------------
+FORD                                                                            
+$$$$$$$$$$$3300                                                                 
+                                                                                
+MILLER                                                                          
+$$$$$$$$$$$1300                                                                 
+                                                                                
+
+14 행이 선택되었습니다.
+
+
+
+
+
+
+9번 문제)
+SQL> select initcap(ename) "Name", length(ename) "Length"
+  2  from emp
+  3  where (ename like 'A%') or (ename like 'J%') or (ename like 'M%');
+
+Name                     Length                                                 
+-------------------- ----------                                                 
+Allen                         5                                                 
+Jones                         5                                                 
+Martin                        6                                                 
+Adams                         5                                                 
+James                         5                                                 
+Miller                        6                                                 
+
+6 행이 선택되었습니다.
+
+
+
+
+
+
+10번 문제)
+SQL> select ename, hiredate, to_char(hiredate, 'day') "DAY"
+  2  from emp
+  3  order by (next_day(hiredate, 2)-hiredate) desc;
+
+ENAME                HIREDATE DAY
+-------------------- -------- ------------------------
+MARTIN               81/09/28 월요일
+CLARK                81/06/09 화요일
+TURNER               81/09/08 화요일
+KING                 81/11/17 화요일
+SMITH                80/12/17 수요일
+JAMES                81/12/03 목요일
+JONES                81/04/02 목요일
+FORD                 81/12/03 목요일
+ALLEN                81/02/20 금요일
+BLAKE                81/05/01 금요일
+ADAMS                87/05/23 토요일
+
+ENAME                HIREDATE DAY
+-------------------- -------- ------------------------
+MILLER               82/01/23 토요일
+WARD                 81/02/22 일요일
+SCOTT                87/04/19 일요일
+
+14 행이 선택되었습니다.
+
+
+
+
+
+
+11번 문제)
+SQL> select ename, nvl(to_char(comm), 'No Commission') "COMM" from emp;
+
+ENAME                                                                           
+--------------------                                                            
+COMM                                                                            
+--------------------------------------------------------------------------------
+SMITH                                                                           
+No Commission                                                                   
+                                                                                
+ALLEN                                                                           
+300                                                                             
+                                                                                
+WARD                                                                            
+500                                                                             
+                                                                                
+
+ENAME                                                                           
+--------------------                                                            
+COMM                                                                            
+--------------------------------------------------------------------------------
+JONES                                                                           
+No Commission                                                                   
+                                                                                
+MARTIN                                                                          
+1400                                                                            
+                                                                                
+BLAKE                                                                           
+No Commission                                                                   
+                                                                                
+
+ENAME                                                                           
+--------------------                                                            
+COMM                                                                            
+--------------------------------------------------------------------------------
+CLARK                                                                           
+No Commission                                                                   
+                                                                                
+SCOTT                                                                           
+No Commission                                                                   
+                                                                                
+KING                                                                            
+No Commission                                                                   
+                                                                                
+
+ENAME                                                                           
+--------------------                                                            
+COMM                                                                            
+--------------------------------------------------------------------------------
+TURNER                                                                          
+0                                                                               
+                                                                                
+ADAMS                                                                           
+No Commission                                                                   
+                                                                                
+JAMES                                                                           
+No Commission                                                                   
+                                                                                
+
+ENAME                                                                           
+--------------------                                                            
+COMM                                                                            
+--------------------------------------------------------------------------------
+FORD                                                                            
+No Commission                                                                   
+                                                                                
+MILLER                                                                          
+No Commission                                                                   
+                                                                                
+
+14 행이 선택되었습니다.
